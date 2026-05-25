@@ -1,52 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-    <!-- Tree View -->
-    <record id="view_sample_model_tree" model="ir.ui.view">
-        <field name="name">sample.model.tree</field>
+    <!-- =========================
+         List View
+    ========================== -->
+    <record id="view_sample_model_list" model="ir.ui.view">
+        <field name="name">sample.model.list</field>
         <field name="model">sample.model</field>
         <field name="arch" type="xml">
-            <tree>
+            <list string="Sample Records">
                 <field name="name"/>
                 <field name="age"/>
                 <field name="email"/>
-            </tree>
+                <field name="active"/>
+            </list>
         </field>
     </record>
 
-    <!-- Form View -->
+    <!-- =========================
+         Form View
+    ========================== -->
     <record id="view_sample_model_form" model="ir.ui.view">
         <field name="name">sample.model.form</field>
         <field name="model">sample.model</field>
         <field name="arch" type="xml">
-            <form>
+            <form string="Sample Record">
+
                 <sheet>
+
                     <group>
-                        <field name="name"/>
-                        <field name="age"/>
-                        <field name="email"/>
-                        <field name="active"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="age"/>
+                        </group>
+
+                        <group>
+                            <field name="email"/>
+                            <field name="active"/>
+                        </group>
                     </group>
+
                 </sheet>
+
             </form>
         </field>
     </record>
 
-    <!-- Action -->
+    <!-- =========================
+         Action Window
+    ========================== -->
     <record id="action_sample_model" model="ir.actions.act_window">
         <field name="name">Sample Records</field>
         <field name="res_model">sample.model</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
-    <!-- Main Menu -->
-    <menuitem id="sample_main_menu"
-              name="Sample Module"/>
+    <!-- =========================
+         Main Menu
+    ========================== -->
+    <menuitem
+        id="sample_main_menu"
+        name="Sample Module"
+        sequence="10"/>
 
-    <!-- Sub Menu -->
-    <menuitem id="sample_sub_menu"
-              name="Records"
-              parent="sample_main_menu"
-              action="action_sample_model"/>
+    <!-- =========================
+         Sub Menu
+    ========================== -->
+    <menuitem
+        id="sample_sub_menu"
+        name="Records"
+        parent="sample_main_menu"
+        action="action_sample_model"
+        sequence="1"/>
 
 </odoo>
