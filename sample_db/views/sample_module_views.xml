@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Tree View -->
+    <record id="view_sample_model_tree" model="ir.ui.view">
+        <field name="name">sample.model.tree</field>
+        <field name="model">sample.model</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="age"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_sample_model_form" model="ir.ui.view">
+        <field name="name">sample.model.form</field>
+        <field name="model">sample.model</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="age"/>
+                        <field name="email"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_sample_model" model="ir.actions.act_window">
+        <field name="name">Sample Records</field>
+        <field name="res_model">sample.model</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Main Menu -->
+    <menuitem id="sample_main_menu"
+              name="Sample Module"/>
+
+    <!-- Sub Menu -->
+    <menuitem id="sample_sub_menu"
+              name="Records"
+              parent="sample_main_menu"
+              action="action_sample_model"/>
+
+</odoo>
