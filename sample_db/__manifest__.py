@@ -25,6 +25,7 @@ Learning custom module development in Odoo.
     'data': [
         'security/ir.model.access.csv',
         'views/sample_module_views.xml',
+        'views/res_partner_views.xml',
     ],
 
     'installable': True,
