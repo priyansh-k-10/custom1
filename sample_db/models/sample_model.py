@@ -6,6 +6,6 @@ class SampleModel(models.Model):
     _description = 'Sample Model'
 
     name = fields.Char(string="Name", required=True)
-    age = fields.Char(string="Location")
+    location = fields.Char(string="Location")
     email = fields.Char(string="Email")
     active = fields.Boolean(string="Active", default=True)
