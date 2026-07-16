@@ -17,6 +17,8 @@ class ResPartner(models.Model):
     def _compute_loyalty_status(self):
         for rec in self:
             if rec.loyalty_points >= 100:
-                rec.loyalty_status = "Gold"
-            else:
                 rec.loyalty_status = "Silver"
+            elif rec.loyalty_points >= 500:
+                rec.loyalty_status = "Platinum"
+            else:
+                rec.loyalty_status = "Gold"
